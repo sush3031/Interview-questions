@@ -11,26 +11,21 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-class StockBuyAndSellSolution
-{
-	public static int profit(int []prices)
-	{
+class StockBuyAndSellSolution {
+	public static int profit(int[] prices) {
 		int min = Integer.MAX_VALUE;
 		int profit = 0;
-		for(int i=0; i<prices.length; i++)
-		{
-			if(prices[i] < min)
-			{
+		for (int i = 0; i < prices.length; i++) {
+			if (prices[i] < min) {
 				min = prices[i];
-			}
-			else
-			{
-				profit = Math.max(profit, prices[i]-min);
+			} else {
+				profit = Math.max(profit, prices[i] - min);
 			}
 		}
 		return profit;
 	}
 }
+
 public class StockBuyAndSell {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
@@ -41,13 +36,12 @@ public class StockBuyAndSell {
 		System.out.println("Enter the values of prices : ");
 		String line = br.readLine();
 		String strs[] = line.trim().split("\\s+");
-		for(int i=0; i<n; i++)
-		{
+		for (int i = 0; i < n; i++) {
 			prices[i] = Integer.parseInt(strs[i]);
 		}
 		int maxProfit = StockBuyAndSellSolution.profit(prices);
 		System.out.println("The maxProfit is " + maxProfit);
-		
+
 	}
 
 }

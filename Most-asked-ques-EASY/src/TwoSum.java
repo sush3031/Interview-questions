@@ -8,33 +8,28 @@ output  : [0,1]
 
 */
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashMap;
 
-class TwoSumSolution
-{
-	public static int[] twoSum(int nums[], int target)
-	{
-		HashMap<Integer,Integer> map = new HashMap<>();
-		for(int i=0; i<nums.length; i++)
-		{
+class TwoSumSolution {
+	public static int[] twoSum(int nums[], int target) {
+		HashMap<Integer, Integer> map = new HashMap<>();
+		for (int i = 0; i < nums.length; i++) {
 			map.put(nums[i], i);
 		}
-		for(int i=0; i<nums.length; i++)
-		{
+		for (int i = 0; i < nums.length; i++) {
 			int val = target - nums[i];
-			if(map.containsKey(val) && map.get(val)!=i)
-			{
-				return new int[] {i,map.get(val)};
+			if (map.containsKey(val) && map.get(val) != i) {
+				return new int[] { i, map.get(val) };
 			}
 		}
 		return new int[] {};
 	}
 }
+
 public class TwoSum {
 
 	public static void main(String[] args) throws IOException {
@@ -45,8 +40,7 @@ public class TwoSum {
 		System.out.println("Enter the values of nums : ");
 		String line = br.readLine();
 		String strs[] = line.trim().split("\\s+");
-		for(int i=0; i<n; i++)
-		{
+		for (int i = 0; i < n; i++) {
 			nums[i] = Integer.parseInt(strs[i]);
 		}
 		System.out.println("Enter the target value : ");
